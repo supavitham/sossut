@@ -1,0 +1,24 @@
+
+<mat-card class="example-card" >
+  <mat-card-header>
+    <mat-card-title style="color:orangered"><h2>Sign in</h2></mat-card-title>
+</mat-card-header>
+  <mat-card-content>
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="User" >
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput type="password" placeholder="Password" >
+      </mat-form-field>
+    </form>
+    </mat-card-content>
+  <mat-card-actions >
+      <button mat-stroked-button style="color:blue;top:10px;left: 100px;"
+      class="example-icon" [routerLink]="['/signup']"routerLinkActive="active">Register</button>
+    <button mat-stroked-button style="color:orangered;top:10px;left: 150px;"
+    class="example-icon" [routerLink]="['/notification']"routerLinkActive="active">Sign in</button>
+  </mat-card-actions>
+</mat-card>
+
+

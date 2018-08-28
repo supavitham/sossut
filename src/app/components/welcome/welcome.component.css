@@ -1,0 +1,18 @@
+.example-card {
+    width:300px;
+    height:200px;
+    position:fixed;
+    top:55%;
+    left:35%;
+    margin-left: -200px;
+    margin-top: -150px;
+  }
+  .example-card1 {
+    width:300px;
+    height:200px;
+    position:fixed;
+    top:55%;
+    left:70%;
+    margin-left: -200px;
+    margin-top: -150px;
+  }
