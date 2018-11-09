@@ -1,12 +1,37 @@
-.example-form {
-    min-width: 150px;
-    max-width: 500px;
-    width: 100%;
-    position:fixed;
-    top:30%;
-    left:30%;
-  }
-  
-  .example-full-width {
-    width: 100%;
-  }
+
+.cdet{
+  width: 60%;
+  top: 10%; 
+  height: 300px;
+  left: 19%;
+  position: absolute;
+}
+.tadet{
+  left: 10%; 
+  position: relative;
+}
+.clocal{
+  width: 60%;
+  top:68%; 
+  height: 450px;
+  left: 19%;
+  position: absolute;
+}
+.talo{
+  position: relative;
+}
+.cima{
+  width: 60%;
+  top:148%;
+  height: 750px;
+  left: 19%;
+  position: absolute;
+}
+.taima{
+ 
+  position: absolute;
+}
+agm-map {
+  width: 50vw;
+  height: 50vh;
+}

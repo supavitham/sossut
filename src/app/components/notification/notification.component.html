@@ -1,11 +1,17 @@
-<div style="text-align:center;bottom:100px;"> 
-  <button mat-raised-button style="width:400px;height: 60px;"
-   class="example-icon" [routerLink]="['/NotificationBar']"routerLinkActive="active"
-  
-     matBadgePosition="before" matBadgeColor="accent">
-     
-     <h2>สัญญาณแจ้งเตือน &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <mat-icon class="example-icon" matBadge="15" matBadgeColor="warn">warning</mat-icon></h2>
-    </button>
-  </div>
-  
+<div class="example-time">
+  <h1>{{date | thaidate :'full'}}</h1>
+  <h2>{{date | date :'HH:mm:ss'}} น.</h2>
+
+</div>
+<div class="notimess">
+  <h2>สัญญาณแจ้งเหตุ</h2>
+</div>
+<div class="iconnoti">
+
+  <mat-icon class="blink" style="font-size: 300px;" [style.animation-iteration-count]="count" (click)="clickSEE()">notifications_active</mat-icon>
+
+</div>
+<div class="noti">
+  <button mat-raised-button style="background:#2320e4 ;color:white;width: 170px;height: 50px;" class="example-icon"
+    (click)="clickSEE()">ดูรายการแจ้งเหตุ</button>
+</div>

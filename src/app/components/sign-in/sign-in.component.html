@@ -1,24 +1,35 @@
-
-<mat-card class="example-card" >
+<mat-card class="example-card">
   <mat-card-header>
-    <mat-card-title style="color:orangered"><h2>Sign in</h2></mat-card-title>
-</mat-card-header>
+    <mat-icon class="example-icon" style="font-size:40px;color:orangered;">account_circle</mat-icon>
+    <mat-card-title style="color:orangered">
+      <h2>Sign in</h2>
+    </mat-card-title>
+  </mat-card-header>
   <mat-card-content>
-    <form class="example-form">
+    <form class="example-form" [formGroup]="form" autocomplete="off" novalidate>
       <mat-form-field class="example-full-width">
-        <input matInput placeholder="User" >
+        <input matInput formControlName="email" class="form-control" placeholder="Email">
+
       </mat-form-field>
+      <br>
       <mat-form-field class="example-full-width">
-        <input matInput type="password" placeholder="Password" >
+        <input matInput type="password" formControlName="password" class="form-control" placeholder="Password">
+        
       </mat-form-field>
     </form>
-    </mat-card-content>
-  <mat-card-actions >
-      <button mat-stroked-button style="color:blue;top:10px;left: 100px;"
-      class="example-icon" [routerLink]="['/signup']"routerLinkActive="active">Register</button>
-    <button mat-stroked-button style="color:orangered;top:10px;left: 150px;"
-    class="example-icon" [routerLink]="['/notification']"routerLinkActive="active">Sign in</button>
+  </mat-card-content>
+  <mat-card-actions class="but1">
+      <button mat-raised-button  style="background:#2320e4 ;color:white;width: 150px;" class="example-icon"
+      [routerLink]="['/signup']" routerLinkActive="active">Sign up</button>
+    <button mat-raised-button  style="background: #cb2d3e;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ef473a, #cb2d3e);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ef473a, #cb2d3e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color:white;width: 150px;" class="example-icon"
+      (click)="sendSingin()">Sign in</button>
   </mat-card-actions>
 </mat-card>
-
-
+<p>
+  <li *ngFor="let item of Items | async">
+    {{ item.id }}
+  </li>
+</p> 

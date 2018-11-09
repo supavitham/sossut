@@ -1,0 +1,51 @@
+.example-time{
+    text-align: center;
+    margin-top: 50px; 
+    color: #4b1706;      
+}
+.example-bar {
+    position: absolute;
+    top:60%;
+    left:50%;
+    margin-left: -200px;
+    margin-top: -150px;
+}
+.example-login{
+    position: absolute;
+    top:90%;
+    left:50%;
+    margin-left: -200px;
+    margin-top: -150px;
+
+}
+.iconnoti{
+    position: absolute;
+    top:55%;
+    left:54%;
+    margin-left: -200px;
+    margin-top: -150px;
+} 
+.noti{
+    position: absolute;
+    top:105%;
+    left:59%;
+    margin-left: -200px;
+    margin-top: -150px;
+    color: red; 
+}
+.blink{
+    color: #d77624;
+    animation-duration: 400ms;
+    animation-name: blink;
+    animation-iteration-count: 0;
+    animation-direction: alternate;
+}
+@keyframes blink{
+    0%{color: #d77624;}
+    100%{color: red;}
+}
+.notimess{
+    text-align: center;
+    margin-top: 40px; 
+    color: red;
+}

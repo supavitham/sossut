@@ -1,36 +1,42 @@
-
-<mat-card class="example-card" >
+<mat-card class="example-card">
   <mat-card-header>
-    <mat-card-title style="color:orangered"><h2>Register</h2></mat-card-title>
-</mat-card-header>
+    <mat-icon class="example-icon" style="font-size:40px;color:orangered;">assignment</mat-icon>
+    <mat-card-title style="color:orangered">
+      <h2>Register</h2>
+    </mat-card-title>
+  </mat-card-header>
   <mat-card-content>
-    <form class="example-form">
+    <form class="example-form" [formGroup]="form" autocomplete="off" novalidate>
       <mat-form-field class="example-full-width">
-        <input matInput placeholder="ชื่อจริง" required name="name" ngModel [(ngModel)]="signup.name">
+        <input matInput formControlName="name" class="form-control" placeholder="ชื่อจริง">
       </mat-form-field>
       <mat-form-field class="example-full-width">
-        <input matInput  placeholder="นามสกุล" required name="lastname" ngModel [(ngModel)]="signup.lastname">
+        <input matInput formControlName="lastname" class="form-control" placeholder="นามสกุล">
       </mat-form-field>
       <mat-form-field class="example-full-width">
-        <input matInput  placeholder="User" required name="user" ngModel [(ngModel)]="signup.user">
+        <input matInput formControlName="idcard" class="form-control" placeholder="บัตรประชาชน">
       </mat-form-field>
       <mat-form-field class="example-full-width">
-        <input matInput type="Password" placeholder="Password" required name="password" ngModel [(ngModel)]="signup.password">
+        <input matInput formControlName="email" class="form-control" placeholder="Email">
       </mat-form-field>
       <mat-form-field class="example-full-width">
-        <input matInput type="Password" placeholder="ConfirmPassword" required name="confirmPassword" ngModel [(ngModel)]="signup.confirmPassword">
+        <input matInput type="Password" formControlName="password" class="form-control" placeholder="Password">
       </mat-form-field>
+      <!--  <mat-form-field class="example-full-width">
+        <input matInput type="Password" formControlName="confirmPassword" class="form-control" placeholder="ConfirmPassword">
+      </mat-form-field> -->
     </form>
-    </mat-card-content>
-  <mat-card-actions >
-      <button mat-stroked-button style="color:blue;top:10px;left: 170px;"
-      class="example-icon" (click)="sendSingup()">Sign up</button>
+  </mat-card-content>
+  <mat-card-actions class="button">
+    <button mat-raised-button style="background: #ff00cc;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #333399, #ff00cc);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #333399, #ff00cc);color:white;width:290px;height: 50px;"
+      class="example-icon" (click)="sendSingup()">Sign
+      up</button>
   </mat-card-actions>
 </mat-card>
-
-
-
-
-
-
-
+<p>
+  <li *ngFor="let item of Items | async">
+    {{ item.id }}
+  </li>
+</p>

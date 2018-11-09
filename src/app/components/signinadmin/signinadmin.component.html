@@ -1,0 +1,25 @@
+<mat-card class="example-card" >
+    <mat-card-header>
+      <mat-icon class="example-icon" style="font-size:40px;color:blue;" >perm_identity</mat-icon>
+      <mat-card-title style="color:blue"><h2>Sign in </h2> </mat-card-title>
+  </mat-card-header> 
+    <mat-card-content >
+      <form class="example-form" [formGroup]="form" autocomplete="off" novalidate >
+        <mat-form-field class="example-full-width">
+          <input matInput formControlName="email" class="form-control" placeholder="Email"  >
+          
+        </mat-form-field>
+        <br>
+        <mat-form-field class="example-full-width"> 
+          <input matInput type="password" formControlName="password" class="form-control" placeholder="Password"  >
+          
+         </mat-form-field>
+      </form>
+      </mat-card-content>
+    <mat-card-actions  class="button">
+      <button mat-raised-button style="background: #ff00cc;  /* fallback for old browsers */
+      background: -webkit-linear-gradient(to right, #333399, #ff00cc);  /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to right, #333399, #ff00cc);color:white;width: 290px;"
+      class="example-icon" (click)="sendSingin()">Sign in</button>
+    </mat-card-actions>
+  </mat-card>

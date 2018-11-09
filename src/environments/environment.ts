@@ -5,13 +5,17 @@
 export const environment = {
   production: false,
   firebase:{
-    apiKey: "AIzaSyAuMPNhmMA3czxi4W5X7GQSmscv3dhJDA0",
-    authDomain: "sosfirebase-bc120.firebaseapp.com",
-    databaseURL: "https://sosfirebase-bc120.firebaseio.com",
-    projectId: "sosfirebase-bc120",
-    storageBucket: "sosfirebase-bc120.appspot.com",
-    messagingSenderId: "1049609704512"
-  }
+    apiKey: "AIzaSyDA4GOXk1N-5_m0WF5ewHktW7cKIclywfo",
+    authDomain: "sutsos-94848.firebaseapp.com",
+    databaseURL: "https://sutsos-94848.firebaseio.com",
+    projectId: "sutsos-94848",
+    storageBucket: "sutsos-94848.appspot.com",
+    messagingSenderId: "496630590212"
+  },
+  firebaseConfig:{
+      
+  },
+  googleMapsKey: 'AIzaSyA2g8qURgn6qB59cUVrN9_2IriGPDp5B8Q'
 };
 
 /*

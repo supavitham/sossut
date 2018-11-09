@@ -1,26 +1,112 @@
-<div style="text-align:center">
-  <form class="example-form">
-    <mat-form-field class="example-full-width">
-    <input matInput placeholder="User">
-  </mat-form-field>
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="ชื่อ" >
-  </mat-form-field>
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="เบอร์โทร" >
-  </mat-form-field>
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="หมายเหตุ" >
-  </mat-form-field>
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="รูปภาพ" >
-  </mat-form-field>
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="GPS">
-  </mat-form-field>
-  </form>
-  
-  <p><button mat-raised-button style="background:#ffccbc;top:450px;">ส่งหมายเหตุ</button></p>
-  </div>
-  
-  
+<mat-card class="cdet">
+  <p style="font-size:24px; text-align: center;color: #4b1706;">รายละเอียดการแจ้งเหตุ</p><br>
+  <table class="tadet">
+    <tr>
+      <td>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="StudentID" value="{{ (notification | async )?.studentID }}">
+        </mat-form-field>
+      </td> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <td>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="เหตุการณ์" value="{{ (notification | async )?.event }}">
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="ชื่อจริง" value="{{ (notification | async )?.subname }}">
+        </mat-form-field>
+      </td> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <td>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="นามสกุล" value="{{ (notification | async )?.lastname }}">
+        </mat-form-field>
+      </td> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <td>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="เบอร์โทร" value="{{ (notification | async )?.tel }}">
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="เรียกรถโรงพยาบาล" value="{{ (notification | async )?.ambulance }}">
+        </mat-form-field>
+      </td> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <td>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="พนักงานดับเพลิง" value="{{ (notification | async )?.fireman }}">
+        </mat-form-field>
+      </td> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <td>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="เจ้าหน้าที่รักษาความปลอดภัย" value="{{ (notification | async )?.security }}">
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+</mat-card>
+
+
+<mat-card class="clocal">
+  <p style="font-size:24px; text-align: center;color: #4b1706;">Location</p><br>
+  <table class="talo">
+    <tr>
+      <td>
+        <div *ngIf="lat && lng">
+
+          <agm-map [latitude]="lat" [longitude]="lng" [zoom]="18">
+
+            <agm-marker [latitude]="lat" [longitude]="lng">
+
+              <agm-info-window>
+                <h2><strong>position</strong></h2>
+                <p>App position!</p>
+              </agm-info-window>
+
+            </agm-marker>
+            <agm-marker *ngFor="let marker of marker" [latitude]="marker.location[0]" [longitude]="marker.location[1]"
+              [iconUrl]="'https://cdn1.iconfinder.com/data/icons/designer-s-tools-1/512/Coffee-64.png'">
+              <agm-info-window>
+                <h3><strong>Location Details</strong></h3>
+                <p>You are {{marker.distance}} kilometers from this point</p>
+              </agm-info-window>
+            </agm-marker>
+          </agm-map>
+        </div>
+      </td>
+    </tr>
+
+  </table>
+</mat-card>
+
+<mat-card class="cima">
+  <p style="font-size:24px; text-align: center;color: #4b1706;">รูปภาพ</p><br>
+  <table class="taima">
+    <tr>
+      <td>
+        <img src="{{ (notification | async )?.pathImage }}" style="width:380px;">
+      </td>
+      <td>
+        <img src="{{ (notification | async )?.pathImage2 }}" style="width:380px;">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <img src="{{ (notification | async )?.pathImage3 }}" style="width:380px">
+      </td>
+      <td>
+        <img src="{{ (notification | async )?.pathImage4 }}" style="width:380px">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <img src="{{ (notification | async )?.pathImage5 }}" style="width:380px">
+      </td>
+    </tr>
+
+  </table>
+</mat-card>

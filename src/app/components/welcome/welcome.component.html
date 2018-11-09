@@ -1,38 +1,18 @@
-<div style="text-align:center">
-  <br><br>
- <!-- <h1 style="color:blue">{{date | date : 'medium'}}</h1>-->
- <mat-card class="example-card">
-  <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title><h3>เข้าสู่ระบบ</h3></mat-card-title>
-  </mat-card-header>
-   <mat-icon class="example-icon" style="font-size:100px;width: 100%;color: red">airport_shuttle</mat-icon> 
-  <mat-card-actions>
-      <button mat-raised-button (click)="onClicklogin()"  style="background:#ffccbc; color: black">เจ้าหน้าที่โรงพยาบาล</button>
-  </mat-card-actions>
-</mat-card>
-
-<mat-card class="example-card1">
-  <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title><h3>เข้าสู่ระบบ</h3></mat-card-title>
-  </mat-card-header>
-  <mat-icon class="example-icon" style="font-size:100px;width: 100%;color: brown">local_taxi</mat-icon> 
-  <mat-card-actions>
-    <button mat-raised-button style="background:#ffccbc;color: black" 
-      class="example-icon" [routerLink]="['/signin']"routerLinkActive="active">เจ้าหน้าที่รักษาความปลอดภัย</button>
-    </mat-card-actions>
-</mat-card>
-
-   <!-- <p><mat-icon class="example-icon" style="font-size:60px;align-items: left">airport_shuttle</mat-icon></p>
-    <p><button mat-raised-button (click)="onClicklogin()"  style="background:#ffccbc; color: black">เจ้าหน้าที่โรงพยาบาล</button></p> <br><br>
-
-  
-    <button mat-raised-button style="background:#ffccbc;color: black" 
-      class="example-icon" [routerLink]="['/login']"routerLinkActive="active">เจ้าหน้าที่รักษาความปลอดภัย</button>
-      <img width="100" img src="secu.jpg">
-   -->
+<h1 class="title">SUT Rescue SOS Emergency</h1>
+<div>
+  <mat-card class="example-card" [routerLink]="['/signinadmin']" routerLinkActive="active" >
+    <mat-icon class="example-icon" style="color:white;">person_add</mat-icon>
+    <mat-card-content>
+      <h2>Admin</h2>
+    </mat-card-content>
+  </mat-card>
 </div>
-
-
-
+ 
+<div>
+  <mat-card class="example-card1"  [routerLink]="['/signin']" routerLinkActive="active">
+    <mat-icon class="example-icon1" style="color: white">person</mat-icon>
+    <mat-card-content>
+        <h2>User</h2>
+      </mat-card-content>
+  </mat-card>
+</div>

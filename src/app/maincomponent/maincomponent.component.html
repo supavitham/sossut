@@ -1,0 +1,48 @@
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+
+  <mat-toolbar class="colorbar">
+
+    <span>SUT Rescue SOS Emergency</span>
+    <span class="example-spacer"></span>
+
+
+    <button mat-button [matMenuTriggerFor]="menu"> ผู้ใช้ : {{emailtitle}}
+      <mat-icon>expand_more</mat-icon>
+    </button>&nbsp; &nbsp;
+
+
+    <mat-menu #menu="matMenu">
+
+      <button mat-menu-item (click)="onClickSignOut()">SIGN OUT &nbsp;&nbsp;
+        <mat-icon>input</mat-icon>
+      </button>
+    </mat-menu>
+
+  </mat-toolbar>
+
+  <mat-sidenav-container class="example-sidenav-container">
+
+    <mat-sidenav opened mode="side" class="menu">
+      <mat-nav-list>
+        <a mat-list-item routerLink="/home/dashboard" style="height: 70px;color: white;">
+          <mat-icon>dashboard</mat-icon> &nbsp;&nbsp;สถิติ
+        </a>
+        <a mat-list-item routerLink="/home/notification" style="height: 70px;color: white;">
+          <mat-icon>notification_important</mat-icon> &nbsp;&nbsp;สัญญาณแจ้งเตือน
+        </a>
+        <a mat-list-item routerLink="/home/NotificationBar" style="height: 70px;color: white;">
+          <mat-icon>list</mat-icon> &nbsp;&nbsp;รายการแจ้งเหตุ
+        </a>
+
+
+      </mat-nav-list>
+
+
+    </mat-sidenav>
+    <mat-sidenav-content style=" background-color: rgb(233, 233, 233)">
+
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+
+  </mat-sidenav-container>
+</div>
